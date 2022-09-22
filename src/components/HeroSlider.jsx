@@ -2,6 +2,8 @@ import React, { useState, useEffect, useCallback } from 'react';
 import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 
+import Button from './Button';
+
 const HeroSlider = (props) => {
 	const data = props.data;
 
@@ -33,6 +35,7 @@ const HeroSlider = (props) => {
 	return (
 		<div className="hero-slider">
 			{data.map((item, index) => (
+				// Hero SLider Item func*/
 				<HeroSliderItem key={index} item={item} active={index === activeSlide} />
 			))}
 
@@ -73,7 +76,16 @@ const HeroSliderItem = (props) => (
 			</div>
 			<div className="hero-slider__item__info__btn">
 				<Link to={props.item.path}>
-					<button>Xem chi tiet</button>
+					{/* Button component */}
+					<Button
+						backgroundColor={props.item.color}
+						size="sm"
+						icon="bx bx-cart"
+						animate={true}
+					>
+						Xem chi tiết
+					</Button>
+					{/* End Button component */}
 				</Link>
 			</div>
 		</div>
