@@ -85,6 +85,24 @@
 			border-radius: 30% 70% 64% 36% / 30% 33% 67% 70%;
 			transform: translate(0, -50%);
 			transition: border-radius 13 ease;
+			animation: border 10s infinite;
 		}
+	}
+}
+@keyframes border {
+	0% {
+		border-radius: 30% 70% 64% 36% / 30% 33% 67% 70%;
+	}
+	25% {
+		border-radius: 52% 48% 27% 73% / 69% 71% 29% 31%;
+	}
+	50% {
+		border-radius: 81% 19% 67% 33% / 42% 28% 72% 58%;
+	}
+	75% {
+		border-radius: 21% 79% 18% 82% / 27% 49% 51% 73%;
+	}
+	100% {
+		border-radius: 30% 70% 64% 36% / 30% 33% 67% 70%;
 	}
 }
