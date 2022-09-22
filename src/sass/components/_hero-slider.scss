@@ -66,6 +66,11 @@
 				@include tablet {
 					font-size: 4rem;
 				}
+
+				@include mobile {
+					font-size: 2.2rem;
+					line-height: 3rem;
+				}
 			}
 
 			&__description {
@@ -73,6 +78,11 @@
 				font-size: 1.5rem;
 				line-height: 2.25rem;
 				overflow: hidden;
+
+				@include mobile {
+					font-size: 1.2rem;
+					line-height: 1.5rem;
+				}
 			}
 
 			&__btn {
@@ -143,7 +153,15 @@
 			animation: border 10s infinite;
 
 			@include tablet {
-				$size: 350px;
+				$size: 300px;
+				height: $size;
+				width: $size;
+				right: 50%;
+				transform: translate(50%, -100%);
+			}
+
+			@include mobile {
+				$size: 280px;
 				height: $size;
 				width: $size;
 				right: 50%;
