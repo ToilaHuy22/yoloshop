@@ -1,0 +1,90 @@
+.hero-slider {
+	height: 100vh;
+	max-height: 1080px;
+	overflow: hidden;
+	position: relative;
+	margin-bottom: 50px;
+	margin-top: calc(#{$header-height} * -1);
+
+	@include tablet {
+		margin-top: calc(#{$header-tablet-height} * -1);
+	}
+
+	@include mobile {
+		margin-top: calc(#{$header-mobile-height} * -1);
+	}
+
+	&__item {
+		@include flex(center, space-between);
+
+		opacity: 0;
+		visibility: hidden;
+		pointer-events: none;
+		position: absolute;
+		inset: 0;
+
+		&.active {
+			opacity: 1;
+			visibility: visible;
+			pointer-events: visible;
+		}
+
+		&__info {
+			width: 58.33%;
+
+			&__title,
+			&__description {
+				margin-bottom: 60px;
+
+				@include tablet {
+					margin-bottom: 15px;
+				}
+			}
+
+			&__title {
+				font-family: 'M PLUS Rounded 1c', sans-serif;
+				font-weight: 600;
+				font-size: 4.5rem;
+				line-height: 6.75rem;
+				overflow: hidden;
+			}
+
+			&__description {
+				color: $txt-second-color;
+				font-size: 1.5rem;
+				line-height: 2.25rem;
+				overflow: hidden;
+			}
+
+			&__btn {
+				overflow: hidden;
+			}
+		}
+
+		&__image {
+			flex-grow: 1;
+			position: relative;
+			height: 100%;
+			z-index: 99;
+			pointer-events: none;
+
+			img {
+				height: 100vh;
+				position: absolute;
+				bottom: 0;
+				right: 0;
+			}
+		}
+		.shape {
+			$size: 472px;
+			height: $size;
+			width: $size;
+			position: absolute;
+			right: 0;
+			top: 50%;
+			border-radius: 30% 70% 64% 36% / 30% 33% 67% 70%;
+			transform: translate(0, -50%);
+			transition: border-radius 13 ease;
+		}
+	}
+}

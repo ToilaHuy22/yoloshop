@@ -24,6 +24,7 @@
 	&.shrink {
 		height: $header-shrink-height;
 		box-shadow: $box-shadow;
+		z-index: 99;
 	}
 
 	&__logo {
