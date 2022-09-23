@@ -53,17 +53,17 @@ const Header = () => {
 		<div className="header" ref={headerRef}>
 			<div className="container">
 				<div className="header__logo">
-					<Link>
+					<Link to="/">
 						<img src={logo} alt="" />
 					</Link>
 				</div>
 				<div className="header__menu">
 					<div className="header__menu__mobile-toggle" onClick={menuToggle}>
-						<i class="bx bx-menu-alt-left"></i>
+						<i className="bx bx-menu-alt-left"></i>
 					</div>
 					<div className="header__menu__left" ref={menuLeft}>
 						<div className="header__menu__left__close" onClick={menuToggle}>
-							<i class="bx bx-chevron-left"></i>
+							<i className="bx bx-chevron-left"></i>
 						</div>
 						{mainNav.map((item, index) => (
 							<div
