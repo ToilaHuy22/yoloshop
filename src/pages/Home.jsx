@@ -5,8 +5,10 @@ import HeroSlider from '../components/HeroSlider';
 import Section, { SectionTitle, SectionBody } from '../components/Section';
 import PolicyCard from '../components/PolicyCard';
 import Grid from '../components/Grid';
+import ProductCard from '../components/ProductCard';
 
 import heroSliderData from '../assets/fake-data/hero-slider';
+import productData from '../assets/fake-data/products';
 import policy from '../assets/fake-data/policy';
 import { Link } from 'react-router-dom';
 
@@ -22,9 +24,8 @@ const Home = () => {
 				<SectionBody>
 					<Grid col={4} mdCol={2} smCol={1} gap={20}>
 						{policy.map((item, index) => (
-							<Link to="/policy">
+							<Link key={index} to="/policy">
 								<PolicyCard
-									key={index}
 									name={item.name}
 									description={item.description}
 									icon={item.icon}
@@ -35,6 +36,26 @@ const Home = () => {
 				</SectionBody>
 			</Section>
 			{/* end section */}
+
+			{/* best selling section */}
+			<Section>
+				<SectionTitle>Top sản phẩm bán chạy trong tháng</SectionTitle>
+				<SectionBody>
+					<Grid col={4} mdCol={2} smCol={1} gap={20}>
+						{productData.getProducts(8).map((item, index) => (
+							<ProductCard
+								key={index}
+								img01={item.image01}
+								img02={item.image02}
+								name={item.title}
+								price={item.price}
+								slug={item.slug}
+							/>
+						))}
+					</Grid>
+				</SectionBody>
+			</Section>
+			{/* end best selling section */}
 		</Helmet>
 	);
 };
