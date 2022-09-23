@@ -1,5 +1,6 @@
 .policy-card {
 	@include flex(center, flex-start);
+	min-height: 100px;
 	padding: 20px;
 	padding-left: 0;
 	box-shadow: $box-shadow;
@@ -27,7 +28,7 @@
 		}
 
 		&__description {
-			font-size: 1;
+			font-size: 1rem;
 			color: $txt-main-color;
 		}
 	}
