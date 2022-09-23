@@ -53,17 +53,33 @@ const Footer = () => {
 		<footer className="footer">
 			<div className="container">
 				<Grid col={4} mdCol={2} smCol={1} gap={10}>
+					<div className="footer__about">
+						<p>
+							<Link to="/">
+								<img src={logo} className="footer__logo" alt="" />
+							</Link>
+						</p>
+						<p>
+							" Bằng chính những trải nghiệm lâu dài và nghiên cứu tâm huyết, chúng
+							tôi tin rằng bằng việc đảm bảo sản phẩm chất lượng, giá cả hợp lý và
+							dịch vụ chăm sóc vượt trội sẽ là con đường giúp chúng tôi thực hiện sứ
+							mệnh của mình."
+						</p>
+					</div>
 					<div>
 						<div className="footer__title">Tổng đài hỗ trợ</div>
 						<div className="footer__content">
 							<p>
-								Liên hệ đặt hàng <strong>0333444555</strong>
+								Liên hệ đặt hàng <br />
+								<strong>0333444555</strong>
 							</p>
 							<p>
-								Thắc mắc đơn hàng<strong>0333444555</strong>
+								Thắc mắc đơn hàng <br />
+								<strong>0333444555</strong>
 							</p>
 							<p>
-								Góp ý, khiếu nại <strong>0333444555</strong>
+								Góp ý, khiếu nại <br />
+								<strong>0333444555</strong>
 							</p>
 						</div>
 					</div>
@@ -88,18 +104,6 @@ const Footer = () => {
 								</p>
 							))}
 						</div>
-					</div>
-					<div className="footer__about">
-						<p>
-							<Link to="/">
-								<img src={logo} className="footer__logo" alt="" />
-							</Link>
-						</p>
-						<p>
-							Bằng chính những trải nghiệm lâu dài và nghiên cứu tâm huyết, chúng tôi tin rằng
-							bằng việc đảm bảo sản phẩm chất lượng, giá cả hợp lý và dịch vụ chăm sóc vượt trội
-							sẽ là con đường giúp chúng tôi thực hiện sứ mệnh của mình.
-						</p>
 					</div>
 				</Grid>
 			</div>

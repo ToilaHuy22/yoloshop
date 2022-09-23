@@ -9,19 +9,34 @@
 
 	&__about {
 		p {
-			margin-bottom: 2rem;
+			margin-bottom: 0.5rem;
+			font-style: italic;
+			line-height: 2rem;
 		}
+	}
+
+	&__title,
+	&__content {
+		text-align: right;
 	}
 
 	&__title {
 		text-transform: uppercase;
 		margin-bottom: 2rem;
+		font-size: 1.25rem;
 		font-weight: 600;
 	}
 
 	&__content {
 		p {
 			margin-bottom: 1.25rem;
+		}
+
+		a {
+			transition: 0.3s ease !important;
+			&:hover {
+				font-weight: 600;
+			}
 		}
 	}
 }
