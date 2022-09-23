@@ -15,6 +15,10 @@
 		width: 40%;
 		color: $main-color;
 
+		@include mobile {
+			width: 30%;
+		}
+
 		i {
 			font-size: 3rem;
 		}

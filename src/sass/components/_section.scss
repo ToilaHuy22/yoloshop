@@ -4,6 +4,11 @@
 	border-bottom: 2px solid #4267b2;
 	box-shadow: $box-shadow;
 
+	@include mobile {
+		margin-bottom: 110px;
+		padding-bottom: 3rem;
+	}
+
 	& > * ~ * {
 		margin-top: 70px;
 	}
