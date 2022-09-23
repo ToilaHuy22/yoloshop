@@ -18,6 +18,10 @@
 	&__title,
 	&__content {
 		text-align: right;
+
+		@include tablet {
+			text-align: center;
+		}
 	}
 
 	&__title {
