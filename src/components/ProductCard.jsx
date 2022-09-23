@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 
 import Button from './Button';
 
-// import numberWithCommas from '../utils/numberWithCommas';
+import numberWithCommas from '../utils/numberWithCommas';
 
 const ProductCard = (props) => {
 	return (
@@ -17,13 +17,9 @@ const ProductCard = (props) => {
 				</div>
 				<h3 className="product-card__name">{props.name}</h3>
 				<div className="product-card__price">
-					{props.price}
-					{/* {numberWithCommas(props.price)} */}
+					{numberWithCommas(props.price)}
 					<span className="product-card__price__old">
-						<del>
-							{/* {numberWithCommas(400000)} */}
-							299000
-						</del>
+						<del>{numberWithCommas(400000)}</del>
 					</span>
 				</div>
 			</Link>
