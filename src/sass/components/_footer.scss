@@ -5,13 +5,25 @@
 
 	&__logo {
 		height: 40px;
+
+		@include mobile {
+			margin-bottom: 1rem;
+		}
 	}
 
 	&__about {
+		@include mobile {
+			margin-bottom: 3rem;
+		}
 		p {
 			margin-bottom: 0.5rem;
 			font-style: italic;
 			line-height: 2rem;
+
+			@include mobile {
+				font-size: 1.5rem;
+				text-align: center;
+			}
 		}
 	}
 
@@ -22,6 +34,11 @@
 		@include tablet {
 			text-align: center;
 		}
+
+		@include mobile {
+			margin-bottom: 4rem;
+			text-align: center;
+		}
 	}
 
 	&__title {
@@ -29,11 +46,21 @@
 		margin-bottom: 2rem;
 		font-size: 1.25rem;
 		font-weight: 600;
+
+		@include mobile {
+			font-size: 1.75rem;
+			margin-bottom: 1.25rem;
+		}
 	}
 
 	&__content {
 		p {
 			margin-bottom: 1.25rem;
+
+			@include mobile {
+				font-size: 1.5rem;
+				margin-bottom: 0.75rem;
+			}
 		}
 
 		a {
