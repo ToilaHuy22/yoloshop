@@ -49,7 +49,7 @@ const InfinityList = (props) => {
 		};
 		getItems();
 		setLoad(false);
-	}, [load, index, data]);
+	}, [load, index, data, props.data]);
 
 	return (
 		<div ref={listRef}>

@@ -81,7 +81,7 @@ const Catalog = () => {
 		}
 
 		setProducts(temp);
-	}, [filter, setProducts]);
+	}, [filter, setProducts, productList]);
 
 	useEffect(() => {
 		updateProducts();
