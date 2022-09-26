@@ -266,7 +266,9 @@ const getProducts = (count) => {
 };
 //----------------------------------------------------------------
 
+//getProductsBySLug
 const getProductBySlug = (slug) => products.find((e) => e.slug === slug);
+//----------------------------------------------------------------
 
 const getCartItemsInfo = (cartItems) => {
 	let res = [];
