@@ -4,6 +4,7 @@ import Helmet from '../components/Helmet';
 import Section, { SectionBody, SectionTitle } from '../components/Section';
 import Grid from '../components/Grid';
 import ProductCard from '../components/ProductCard';
+import ProductView from '../components/ProductView';
 
 import productData from '../assets/fake-data/products';
 
@@ -19,7 +20,9 @@ const Product = (props) => {
 	return (
 		<Helmet title={product.title}>
 			<Section>
-				<SectionBody>{product.title}</SectionBody>
+				<SectionBody>
+					<ProductView product={product} />
+				</SectionBody>
 			</Section>
 			<Section>
 				<SectionTitle>Khám phá thêm</SectionTitle>
