@@ -11,18 +11,19 @@
 		position: absolute;
 		opacity: 0;
 		cursor: pointer;
-		height: 0;
-		width: 0;
+		height: 18px;
+		width: 18px;
 	}
 
 	&__checkmark {
 		margin-right: 10px;
-		height: 15px;
-		width: 15px;
+		height: 18px;
+		width: 18px;
 		border: 1px solid $txt-second-color;
 
 		i {
 			transform: scale(0);
+			font-size: 15px;
 			transition: transfrom 0.3s ease;
 		}
 	}

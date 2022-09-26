@@ -10,6 +10,7 @@ import size from '../assets/fake-data/product-size';
 
 import Button from '../components/Button';
 import InfinityList from '../components/InfinityList';
+import { useRef } from 'react';
 
 const Catalog = () => {
 	const initFilter = {
@@ -87,11 +88,20 @@ const Catalog = () => {
 		updateProducts();
 	}, [updateProducts]);
 
+	const filterRef = useRef(null);
+
+	//Show/hide filter
+	const showHideFilter = () => filterRef.current.classList.toggle('active');
+
 	return (
 		<Helmet title="Sản phẩm">
 			<div className="catalog">
 				{/* filter */}
-				<div className="catalog__filter">
+				<div className="catalog__filter" ref={filterRef}>
+					{/* hide filter tablet, mobile */}
+					<div className="catalog__filter__close" onClick={showHideFilter}>
+						<i className="bx bx-left-arrow-alt"></i>
+					</div>
 					<div className="catalog__filter__widget">
 						<div className="catalog__filter__widget__title">Danh mục sản phẩm</div>
 						<div className="catalog__filter__widget__content">
@@ -152,6 +162,14 @@ const Catalog = () => {
 					</div>
 				</div>
 				{/* end filter */}
+
+				{/* toggle/ show filter tablet, mobile*/}
+				<div className="catalog__filter__toggle">
+					<Button size="sm" onClick={showHideFilter}>
+						Bộ lọc
+					</Button>
+				</div>
+				{/* end toggle */}
 
 				{/* content */}
 				<div className="catalog__content">
