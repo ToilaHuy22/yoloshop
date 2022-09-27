@@ -1,12 +1,17 @@
 import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 
+import { useDispatch } from 'react-redux';
+import { addItem } from '../redux/shopping-cart/cartItemSlide';
+
 import { withRouter } from 'react-router';
 
 import Button from './Button';
 import numberWithCommas from '../utils/numberWithCommas';
 
 const ProductView = (props) => {
+	const dispatch = useDispatch();
+
 	let product = props.product;
 
 	if (product === undefined)
@@ -75,11 +80,31 @@ const ProductView = (props) => {
 	};
 
 	const addToCart = () => {
-		if (check()) console.log({ color, size, quantity });
+		if (check()) {
+			dispatch(
+				addItem({
+					slug: product.slug,
+					color: color,
+					size: size,
+					quantity: quantity,
+					price: product.price,
+				})
+			);
+		}
 	};
 
 	const goToCart = () => {
-		if (check()) props.history.push('/cart');
+		if (check()) {
+			dispatch(
+				addItem({
+					slug: product.slug,
+					color: color,
+					size: size,
+					quantity: quantity,
+					price: product.price,
+				})
+			);
+		}
 	};
 
 	return (
@@ -109,7 +134,10 @@ const ProductView = (props) => {
 						dangerouslySetInnerHTML={{ __html: product.description }}
 					></div>
 					<div className="product-description__toggle">
-						<Button size="sm" onClick={() => setDescriptionExpand(!descriptionExpand)}>
+						<Button
+							size="sm"
+							onClick={() => setDescriptionExpand(!descriptionExpand)}
+						>
 							{descriptionExpand ? 'Thu gọn' : 'Xem thêm'}
 						</Button>
 					</div>
