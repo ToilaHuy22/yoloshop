@@ -90,6 +90,38 @@
 					}
 				}
 			}
+
+			&__quantity {
+				@include flex(flex-start, flex-start);
+
+				&__btn {
+					@include flex(center, center);
+					width: 30px;
+					height: 30px;
+					border: 2px solid $txt-second-color;
+					font-size: 1.5rem;
+					cursor: pointer;
+				}
+
+				&__input {
+					@include flex(center, center);
+					height: 30px;
+					width: 90px;
+					font-size: 1.5rem;
+					border-top: 2px solid $txt-second-color;
+					border-bottom: 2px solid $txt-second-color;
+				}
+			}
+
+			label {
+				color: $txt-error;
+				font-style: italic;
+				opacity: 0.8;
+			}
+			button {
+				margin-right: 1rem;
+				margin-bottom: 1rem;
+			}
 		}
 	}
 }
