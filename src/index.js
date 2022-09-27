@@ -7,9 +7,14 @@ import './sass/index.scss';
 
 import Layout from './components/Layout';
 
+import { store } from './redux/store';
+import { Provider } from 'react-redux';
+
 ReactDOM.render(
 	<React.StrictMode>
-		<Layout />
+		<Provider store={store}>
+			<Layout />
+		</Provider>
 	</React.StrictMode>,
 	document.getElementById('root')
 );
