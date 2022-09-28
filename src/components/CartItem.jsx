@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 
 import { useDispatch } from 'react-redux';
-import { updateItem } from '../redux/shopping-cart/cartItemSlide';
+import { updateItem, removeItem } from '../redux/shopping-cart/cartItemSlide';
 
 import numberWithCommas from '../utils/numberWithCommas';
 import { Link } from 'react-router-dom';
@@ -33,7 +33,7 @@ const CartItem = (props) => {
 	};
 
 	const removeCartItem = () => {
-		console.log('removeCartItem');
+		dispatch(removeItem(item));
 	};
 
 	return (
