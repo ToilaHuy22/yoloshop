@@ -14,6 +14,13 @@
 		position: sticky;
 		top: calc(#{$header-shrink-height} + 20px);
 
+		@include mobile {
+			width: 100%;
+			margin-right: 0;
+			margin-bottom: 30px;
+			position: unset;
+		}
+
 		&__txt {
 			& > * {
 				margin-bottom: 10px;
@@ -61,8 +68,21 @@
 			@include flex(center, space-between);
 			flex-grow: 1;
 
+			@include mobile {
+				@include flex(flex-start, center);
+				flex-direction: column;
+
+				& > * {
+					margin-bottom: 10px;
+				}
+			}
+
 			&__name {
 				width: 40%;
+
+				@include mobile {
+					width: 100%;
+				}
 			}
 
 			&__name,

@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 
 import { useDispatch } from 'react-redux';
 import { addItem } from '../redux/shopping-cart/cartItemSlide';
+import { remove } from '../redux/product-modal/productModalSlice';
 
 import { withRouter } from 'react-router';
 
@@ -105,6 +106,8 @@ const ProductView = (props) => {
 					price: product.price,
 				})
 			);
+			dispatch(remove());
+			props.history.push('/cart');
 		}
 	};
 
