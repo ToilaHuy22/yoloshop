@@ -27,7 +27,7 @@ const Cart = () => {
 		setTotalProduct(cartItems.reduce((total, item) => total + Number(item.quantity), 0));
 		setTotalPrice(
 			cartItems.reduce(
-				(total, item) => total + Number(item.price) * Number(item.price),
+				(total, item) => total + Number(item.quantity) * Number(item.price),
 				0
 			)
 		);

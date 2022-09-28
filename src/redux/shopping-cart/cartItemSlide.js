@@ -13,6 +13,7 @@ export const cartItemsSlice = createSlice({
 	name: 'cartItems',
 	initialState,
 	reducers: {
+		//Add item into cart
 		addItem: (state, action) => {
 			const newItem = action.payload;
 
@@ -44,6 +45,25 @@ export const cartItemsSlice = createSlice({
 			localStorage.setItem('cartItems', JSON.stringify(sortItems(state.value)));
 			console.log(state.value);
 		},
+
+		//Update item into cart
+		updateItem: (state, action) => {
+			const itemUpdate = action.payload;
+
+			const item = findItem(state.value, itemUpdate);
+
+			if (item.length > 0) {
+				state.value = delItem(state.value, itemUpdate);
+				state.value = [
+					...state.value,
+					{
+						...itemUpdate,
+						id: item[0].id,
+					},
+				];
+				localStorage.setItem('cartItems', JSON.stringify(sortItems(state.value)));
+			}
+		},
 	},
 });
 
@@ -55,6 +75,6 @@ const delItem = (arr, item) =>
 
 const sortItems = (arr) => arr.sort((a, b) => (a.id > b.id ? 1 : a.id < b.id ? -1 : 0));
 
-export const { addItem } = cartItemsSlice.actions;
+export const { addItem, updateItem } = cartItemsSlice.actions;
 
 export default cartItemsSlice.reducer;
