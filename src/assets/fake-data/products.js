@@ -270,6 +270,7 @@ const getProducts = (count) => {
 const getProductBySlug = (slug) => products.find((e) => e.slug === slug);
 //----------------------------------------------------------------
 
+//getCartItemsInfor
 const getCartItemsInfo = (cartItems) => {
 	let res = [];
 	if (cartItems.length > 0) {
@@ -286,6 +287,7 @@ const getCartItemsInfo = (cartItems) => {
 	// console.log(res.sort((a, b) => a.slug > b.slug ? 1 : (a.slug < b.slug ? -1 : 0)))
 	return res.sort((a, b) => (a.id > b.id ? 1 : a.id < b.id ? -1 : 0));
 };
+//----------------------------------------------------------------
 
 const productData = {
 	getAllProducts,
