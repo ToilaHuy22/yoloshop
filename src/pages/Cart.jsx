@@ -7,6 +7,7 @@ import productData from '../assets/fake-data/products';
 import { Link } from 'react-router-dom';
 import Helmet from '../components/Helmet';
 import Button from '../components/Button';
+import CartItem from '../components/CartItem';
 
 import numberWithCommas from '../utils/numberWithCommas';
 
@@ -49,6 +50,11 @@ const Cart = () => {
 							<Button size="block">Tiếp tục mua hàng</Button>
 						</Link>
 					</div>
+				</div>
+				<div className="cart__list">
+					{cartProducts.map((item, index) => (
+						<CartItem item={item} key={index} />
+					))}
 				</div>
 			</div>
 		</Helmet>

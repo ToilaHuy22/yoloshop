@@ -90,6 +90,7 @@ const ProductView = (props) => {
 					price: product.price,
 				})
 			);
+			alert('success');
 		}
 	};
 

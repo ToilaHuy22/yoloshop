@@ -6,7 +6,7 @@
 	}
 
 	&__info {
-		width: 40%;
+		// width: 30%;
 		margin-right: 30px;
 		margin-top: 30px;
 		padding: 20px;
@@ -38,6 +38,49 @@
 
 		&__btn > * {
 			margin-bottom: 20px;
+		}
+	}
+
+	&__list {
+		flex-grow: 1;
+	}
+
+	&__item {
+		@include flex(center, flex-start);
+		margin-bottom: 20px;
+
+		&__image {
+			margin-right: 20px;
+
+			img {
+				height: 120px;
+			}
+		}
+
+		&__info {
+			@include flex(center, space-between);
+			flex-grow: 1;
+
+			&__name {
+				width: 40%;
+			}
+
+			&__name,
+			&__price {
+				font-size: 1.25rem;
+			}
+
+			&__del {
+				font-size: 1.5rem;
+
+				i {
+					cursor: pointer;
+
+					&:hover {
+						color: $main-color;
+					}
+				}
+			}
 		}
 	}
 }
