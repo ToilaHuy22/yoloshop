@@ -1,3 +1,9 @@
+Use git to clone this project to your computer
+
+#npm i
+#Then run the command using VisualSCode (in the correct project directory, or use cmd, gitbash)
+
+#npm start
 
 # Preview
 
